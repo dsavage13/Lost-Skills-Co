@@ -1,0 +1,172 @@
+
+
+.nav-bar{
+    display: flex;
+    flex-direction: row; 
+    align-items: center;
+    padding: 10px 20px;
+    background-color: var(--primary-color);
+    color: var(--secondary-color);
+    max-width: 100%;
+}
+
+.nav-left{
+    display: flex;
+    flex-direction: row; 
+    align-items: center;
+    justify-content: flex-start;
+    flex-grow: 1; /* Allow nav-left to take available space */
+}
+
+.nav-logo img{
+    width: 175px; /* Default logo size */
+    height: 50px; /* Maintain aspect ratio */
+    max-height: 50px; /* Ensure it fits within the header */
+    object-fit: contain; 
+}
+
+.nav-left a{
+    text-decoration: none;
+    color: var(--secondary-color);
+    margin-right: 20px;
+    font-size: 20px;
+    padding: 5px 10px;
+    text-transform: uppercase;
+}
+
+.nav-left a:active{
+    color: var(--button-color);
+}   
+
+.nav-left img{
+    width: 175px;
+    height: 50px;
+}
+
+.nav-left a:hover{
+    color: var(--button-color);
+}
+.nav-right a{
+    text-decoration: none;
+    color: var(--secondary-color);
+    margin-left: 20px;
+    border: 1px solid var(--secondary-color);
+    padding: 5px 10px;
+    border-radius: 5px;
+    font-size: 20px;
+
+}
+
+.nav-right button{
+    border: none;
+    background: none;
+}
+
+.nav-right a:hover{
+    background-color: var(--button-color);
+    border-color: var(--button-color);
+    color: var(--primary-color);
+    cursor: pointer;
+}
+
+/* Dropdown Menu */
+.nav-dropdown {
+    display: none; /* Hidden by default */
+    flex-direction: column;
+    background-color: var(--primary-color);
+    position: absolute;
+    top: 100%; /* Position below the header */
+    right: 0;
+    width: 100%; /* Full width for mobile */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Add a subtle shadow */
+    z-index: 999;
+    border-radius: 0 0 10px 10px; /* Rounded bottom corners */
+    overflow: hidden; /* Prevent content overflow */
+}
+
+.nav-dropdown a {
+    padding: 15px 20px; /* Add padding for better spacing */
+    text-align: Center; /* Align text to the center */
+    color: var(--secondary-color);
+    text-decoration: none;
+    font-size: 16px; /* Adjust font size for readability */
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1); /* Subtle divider between links */
+    transition: background-color 0.3s ease, color 0.3s ease; /* Smooth hover effect */
+}
+
+.nav-dropdown a:last-child {
+    border-bottom: none; /* Remove border for the last link */
+}
+
+.nav-dropdown a:hover {
+    background-color: var(--secondary-color); /* Highlight background on hover */
+    color: var(--primary-color); /* Change text color on hover */
+}
+
+/* Hamburger Menu */
+.hamburger {
+    display: none; /* Hide by default */
+    flex-direction: column;
+    justify-content: space-between;
+    width: 25px;
+    height: 20px;
+    cursor: pointer;
+}
+
+.hamburger div {
+    background-color: var(--secondary-color);
+    height: 3px;
+    width: 100%;
+    border-radius: 2px;
+    transition: transform 0.3s ease;
+}
+
+
+
+/* Responsive CSS */
+
+@media screen and (max-width: 768px) {
+    .nav-bar {
+        flex-direction: column;
+        align-items: center;
+        padding: 10px;
+    }
+
+    .nav-left a, .nav-right a {
+        margin: 10px 0; /* Stack links vertically on mobile */
+        font-size: 18px; /* Adjust font size for mobile */
+    }
+
+    .nav-left img {
+        width: 150px; /* Adjust image size for mobile */
+    }
+    .nav-right a {
+        padding: 10px 15px; /* Increase padding for better touch targets */
+        font-size: 18px; /* Adjust font size for mobile */
+    }
+    .nav-right button {
+        padding: 10px 15px; /* Increase padding for better touch targets */
+        font-size: 18px; /* Adjust font size for mobile */
+    }
+
+    .nav-left img {
+        width: 100px; /* Shrink logo size */
+    }
+
+    .nav-right, .nav-left {
+        display: none; /* Hide the nav links */
+    }
+
+    .hamburger {
+        display: flex; /* Show hamburger menu */
+    }
+
+    .nav-dropdown {
+        display: flex; /* Show dropdown menu when triggered */
+    }
+
+    .hamburger {
+        display: flex; /* Show hamburger menu on smaller screens */
+    }
+}
+

@@ -1,0 +1,41 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block content %}
+    <div class="cart-container">
+        <h1>Your Cart</h1>
+            {% for item in cart_items %}
+                <div class="cart-item">
+                    <form action="{% url 'remove-from-cart' item.product.id %}"
+                    method="POST">
+                    {% csrf_token %}
+                    <button class="cart-item-remove" type="submit">X</button>
+                </form>
+                    <div class="cart-item-details">
+                        <img src="{{ item.product.image.url }}" alt="">
+                        <div class="cart-item-title"><h2>{{ item.product.title }}</h2></div>
+                        <p>{{ item.size }}</p>
+                    </div>
+                    <div class="cart-item-quantity">
+                        <form action="{% url 'increase_cart_item' item.product.id %}" method="POST">
+                            {% csrf_token %}
+                            <button type="submit" class="btn">+</button>
+                        </form>
+                        <span class="item-quantity">{{ item.quantity }}</span>
+                        <form action="{% url 'decrease_cart_item' item.product.id %}" method="POST">
+                            {% csrf_token %}
+                            <button type="submit" class="btn">-</button>
+                        </form>
+                    </div>
+                    <div class="cart-item-price" data-price="{{ item.product.price }}" data-quantity="{{ item.quantity }}">
+                        <span>${{ item.product.price }}</span>
+                    </div>
+                </div>
+            {% endfor %}
+        <a class="btn" href="{% url 'product_list' %}">
+            Continue Shopping
+        </a>
+        <a class="btn" href="#">Checkout</a>
+    </div>
+<script src="{% static 'js/cart.js' %}"></script>
+{% endblock content %}

@@ -1,0 +1,19 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Featured Products</title>
+</head>
+<body>
+    <div class="featured center-column">                               <!-- Will link database so admin can select products to feature and have displayed-->
+        <h1>Featured Product</h1>
+        <img src="{% static 'img/featured-product.jpeg' %}" alt="">
+        <h2>Product Name</h2>
+        <p>Product Description</p>
+        <button class="btn btn-large btn-primary">Buy Now</button>
+    </div>
+</body>
+</html>

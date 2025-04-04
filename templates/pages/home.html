@@ -1,0 +1,24 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %}Home{% endblock title %}
+{% block content %}
+<div class="home-container">
+    <div class="featured-container">
+        {% block featured %}
+        {% include 'pages/featured.html' %}
+        {% endblock featured %}
+    </div>
+    <div id="about-container" class="about-container center-column">
+        {% block about %}
+        {% include 'pages/about.html' %}
+        {% endblock about %}
+    </div>
+    <div id="contact-container" class="contact-container">
+        {% block contact %}
+        {% include 'pages/contact.html' %}
+        {% endblock contact %}
+    </div>
+</div>
+
+{% endblock content %}

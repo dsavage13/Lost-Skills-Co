@@ -1,0 +1,33 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %}Products{% endblock title %}
+{% block content %}
+    <h1>Products</h1>
+    <div class="product-container">
+        {% for product in products %}
+            <div class="product-card">
+                <img src="{{ product.image.url }}" alt="">
+                <h2>{{ product.title }}</h2>
+                <p>{{ product.description }}</p>
+                <p>${{ product.price }}</p>
+                <div class="product-form">
+                    <input type="hidden" name="product_id" value="{{ product.id }}">
+                    <select name="" id="" class="size-select">
+                        <option value="" disabled selected>Select Size</option>
+                        <option value="small">Small</option>
+                        <option value="medium">Medium</option>
+                        <option value="large">Large</option>
+                        <option value="xlarge">X-Large</option>
+                    </select>
+                    <form action="{% url 'add-to-cart' product.id %}" method="post">
+                        {% csrf_token %}
+                        <label for="quantity-{{ product.id }}">Quantity:</label>
+                        <input type="number" name="quantity" id="quantity-{{ product.id }}" class="quantity-input" min="1" value="1">
+                        <button class="add-to-cart-btn">Add to Cart</button>
+                    </form>
+                </div>
+            </div>
+        {% endfor %}
+    </div>
+{% endblock content %}

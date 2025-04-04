@@ -1,0 +1,398 @@
+:root {
+    --primary-color: black;
+    --secondary-color: white;
+    --button-color: rgb(126, 31, 31);
+}
+
+header{
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    max-width: 100%;
+}
+
+html, body {
+    width: 100%;
+    height: auto;
+}
+
+.center-row {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.center-column {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+html {
+    font: 14px;
+    color: var(--secondary-color);
+    scroll-behavior: smooth;
+    background-color: var(--primary-color);
+}
+
+/* General Styles */
+
+* {
+    padding: 0px;
+    margin: 0px;
+    box-sizing: border-box; /* Ensure padding and border are included in the element's total width and height */
+    max-width: 100vw;
+}
+
+body {
+    margin: 0;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+        'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+        sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+
+/* Product Section */
+
+.product-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: flex-start;
+    margin: 0 auto;
+    padding: 20px;
+    max-width: 1200px;
+}
+
+.product-card {
+    flex: 0 1 calc(33.333%-20px); /* 3 cards per row with 20px gap */
+    margin: 10px;
+    padding: 15px;
+    border-radius: 10px;
+    background-color: var(--secondary-color);
+    color: var(--primary-color);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    height: auto;
+    width: 30%;
+}
+
+.product-card:hover {
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+    transform: translateY(-2px);
+}
+
+.product-card img {
+    width: 100%;
+    height: auto;
+    border-radius: 10px;
+    margin-bottom: 10px;
+}
+
+.product-card h2 {
+    margin: 10px 0;
+    font-size: 18px;
+    text-align: center;
+}
+
+.product-card p {
+    margin: 10px 0;
+    font-size: 14px;
+    text-align: center;
+}
+
+.product-card .product-form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.product-card button {
+    margin: 10px 0;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    background-color: var(--button-color);
+    color: var(--secondary-color);
+    font-size: 14px;
+    cursor: pointer;
+}
+
+.product-card button:hover {
+    background-color: var(--secondary-color);
+    color: var(--button-color);
+    border: 1px solid var(--button-color);
+}
+
+.product-card select {
+    margin: 10px 0;
+    padding: 10px 10px;
+    border: none;
+    border-radius: 5px;
+    background-color: var(--button-color);
+    color: var(--secondary-color);
+    font-size: 16px;
+    cursor: pointer;
+}
+
+.product-card label {
+    margin: 10px 0;
+    padding: 10px 20px;
+    color: var(--button-color);
+    font-size: 16px;
+    cursor: pointer;
+}
+
+.product-card input {
+    margin: 10px 0;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    background-color: var(--button-color);
+    color: var(--secondary-color);
+    font-size: 16px;
+    cursor: pointer;
+}
+
+.quantity-input{
+    width: 100px;
+    text-align: center;
+}
+
+/* Cart CSS */
+
+.cart-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 20px auto;
+    padding: 20px;
+    max-width: 800px;
+    background-color: var(--secondary-color);
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.cart-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    margin: 10px 0;
+    padding: 15px;
+    border-radius: 10px;
+    background-color: var(--primary-color);
+    color: var(--secondary-color);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: 0.3s;
+}
+
+.cart-item:hover {
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+    transform: translateY(-2px);
+}
+
+.cart-item img {
+    width: 100px;
+    height: 100px;
+    border-radius: 10px;
+    object-fit: cover;
+    margin-right: 15px;
+}
+
+.cart-item-details {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    flex: 2;
+    margin-right: 15px;
+}
+
+.cart-item-title {
+    display: flex;
+    flex-direction: column; /* Stack title and other details vertically */
+}
+
+.cart-item-title h2 {
+    font-size: 18px;
+    margin: 5px 0;
+    color: var(--button-color);
+}
+
+.cart-item-quantity {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex: 1;
+}
+
+.cart-item-quantity button {
+    margin: 0 5px;
+    padding: 5px 10px;
+    border: none;
+    border-radius: 5px;
+    background-color: var(--button-color);
+    color: var(--secondary-color);
+    font-size: 14px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.cart-item-quantity button:hover {
+    background-color: var(--secondary-color);
+    color: var(--button-color);
+    border: 1px solid var(--button-color);
+}
+
+.cart-item-price {
+    flex: 1;
+    text-align: right;
+    font-size: 16px;
+    font-weight: bold;
+    color: var(--button-color);
+}
+
+.cart-item-remove {
+    position: absolute; /* Position the button relative to the cart-item */
+    top: 10px;
+    right: 10px;
+    background-color: transparent;
+    border: none;
+    color: darkred;
+    font-size: 18px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.cart-item-remove:hover {
+    color: red;
+    transform: scale(1.2); /* Slightly enlarge the "X" on hover */
+}
+
+/* Responsive Styles */
+
+/* Dropdown Menu for Smaller Screens */
+.nav-dropdown {
+    display: none; /* Hide dropdown by default */
+    flex-direction: column;
+    background-color: var(--primary-color);
+    position: absolute;
+    top: 100%; /* Position below the header */
+    right: 0;
+    width: 100%; /* Full width for mobile */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    z-index: 999;
+}
+
+.nav-dropdown a {
+    padding: 10px 20px;
+    text-align: left;
+    border-bottom: 1px solid var(--secondary-color);
+}
+
+.nav-dropdown a:hover {
+    background-color: var(--secondary-color);
+    color: var(--primary-color);
+}
+
+@media (max-width: 1200px) {
+    .product-card {
+        flex: 0 1 calc(50% - 20px); /* 2 cards per row on medium screens */
+    }
+
+    .product-container {
+        padding: 10px;
+    }
+
+    .cart-container {
+        max-width: 600px; /* Adjust max-width for smaller screens */
+        padding: 10px;
+    }
+
+    .cart-item {
+        padding: 10px;
+        font-size: 14px; /* Adjust font size for smaller screens */
+    }
+
+    .cart-item-details {
+        flex-direction: column; /* Stack details vertically on smaller screens */
+        align-items: flex-start; /* Align items to the start */
+    }
+
+    .cart-item-quantity {
+        margin-top: 10px; /* Add margin to separate from title when stacked */
+        justify-content: flex-start; /* Align quantity controls to the start */
+    }
+    .cart-item-title h2 {
+        font-size: 16px; /* Adjust title font size for smaller screens */
+        margin: 3px 0; /* Reduce margin for better spacing on smaller screens */
+    }
+
+    .cart-item-title {
+        align-items: flex-start; /* Align title to the start when stacked */
+        margin-bottom: 5px; /* Add some space below the title for better readability */
+    }
+    .cart-item-quantity button {
+        padding: 5px; /* Adjust padding for smaller screens */
+        font-size: 12px; /* Smaller font size for buttons */
+    }
+
+    .cart-item-price {
+        text-align: left; /* Align price to the left when stacked */
+        font-size: 14px; /* Adjust font size for smaller screens */
+    }
+
+    .cart-item-remove {
+        top: 5px; /* Adjust position for smaller screens */
+        right: 5px; /* Adjust position for smaller screens */
+        font-size: 16px; /* Smaller font size for the remove button */
+    }
+
+    /* Adjust the quantity input width for smaller screens */
+    .quantity-input {
+        width: 80px; /* Make the input narrower on smaller screens */
+        text-align: center; /* Center align the text */
+    }
+
+    /* Ensure the cart item image is responsive on smaller screens */
+    .cart-item img {
+        width: 80px; /* Smaller image size for mobile */
+        height: 80px; /* Maintain aspect ratio */
+        object-fit: cover; /* Ensure the image covers the area */
+        margin-right: 10px; /* Adjust margin for better spacing */
+    }
+
+    /* Ensure the cart item details are responsive */
+    .cart-item-details {
+        width: 100%; /* Ensure it takes full width on smaller screens */
+        margin-bottom: 10px; /* Add space below for better readability */
+    }
+}
+
+@media (max-width: 768px) {
+    .product-card {
+        flex: 0 1 calc(100% - 20px); /* 1 card per row on small screens */
+        width: 100%; /* Ensure full width on small screens */
+    }
+
+    .cart-container {
+        max-width: 100%; /* Full width for mobile */
+        padding: 5px; /* Reduce padding for mobile */
+    }
+
+    .cart-item {
+        flex-direction: column; /* Stack items vertically on small screens */
+        align-items: center; /* Center align items */
+        width: 100%; /* Ensure full width on small screens */
+    }
+
+    .footer-container {
+        padding: 10px; /* Adjust padding for footer on smaller screens */
+        text-align: center; /* Center align footer text */
+        z-index: 100; /* Ensure footer is above other elements */
+    }
+
+}

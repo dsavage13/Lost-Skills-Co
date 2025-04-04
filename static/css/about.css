@@ -1,0 +1,45 @@
+.about-container {
+    padding: 20px; /* Add padding inside the section */
+    margin-bottom: 50px; /* Add space between the About section and the footer */
+    background-color: var(--primary-color);
+    color: var(--secondary-color);
+    border-radius: 10px;
+    max-width: 100%;
+    box-sizing: border-box; /* Ensure padding is included in the width */
+    scroll-margin-top: 60px;
+}
+
+.about-container p {
+    font-size: 1rem;
+    line-height: 1.5; /* Improve readability */
+    text-align: center;
+    margin: 10px 0;
+}
+
+.about-container img {
+    width: 100%;
+    max-width: 300px; /* Limit the image size */
+    height: auto;
+    margin: 20px auto;
+    display: block; /* Center the image */
+}
+
+.about-container h1{
+    font-size: 2rem;
+    text-align: center;
+    margin: 10px;
+    padding: 1rem;
+    color: var(--button-color);
+}
+
+/* Responsive Styles */
+@media (max-width: 768px) {
+    .about-container {
+        padding: 15px; /* Adjust padding for smaller screens */
+        margin-bottom: 60px; /* Ensure enough space between the About section and the footer */
+    }
+
+    .about-container p {
+        font-size: 0.9rem; /* Adjust font size for smaller screens */
+    }
+}
